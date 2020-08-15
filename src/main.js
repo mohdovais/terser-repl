@@ -3,9 +3,9 @@
   const doc = document;
   const getElementById = doc.getElementById.bind(doc);
   const sourceEl = getElementById("source");
-  const targetEl = getElementById("target");
-  const sourceBytesEl = getElementById("source-bytes");
-  const targetBytesEl = getElementById("target-bytes");
+  const targetEl = getElementById("minified");
+  const sourceBytesEl = getElementById("source-size");
+  const targetBytesEl = getElementById("minified-size");
   const terserConfig = {
     toplevel: true,
   };
@@ -17,7 +17,7 @@
   const targetCodeMirror = CodeMirror.fromTextArea(targetEl, {
     mode: "javascript",
     lineWrapping: true,
-    readOnly: true,
+    readOnly: 'nocursor',
   });
 
   /**

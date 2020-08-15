@@ -16,23 +16,26 @@ header {
   color: #fff;
 }
 
-h1 {
+h1,
+h2 {
   margin: 0;
-  padding: 1rem;
   font-weight: 400;
+}
+
+h1 {
+  padding: 1rem;
   font-size: 1.5rem;
 }
 
-.code {
-  position: relative;
-  font-size: 16px;
-  line-height: 24px;
+h2 {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: hsl(308, 13%, 22.5%);
+  color: #fff;
 }
 
 .size {
   position: absolute;
-  right: 0;
-  bottom: 0;
   bottom: 1rem;
   right: 2rem;
   z-index: 2;
@@ -47,30 +50,41 @@ h1 {
   display: none;
 }
 
+.editor-wrapper {
+  position: relative;
+  height: calc(100% - 45px);
+}
+
+.editor .CodeMirror {
+  height: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.editor.source .CodeMirror {
+  background-color: aliceblue;
+}
+
 .editors-container {
   display: flex;
+  flex-direction: column;
   flex: 1;
   overflow: hidden;
 }
 
 .editor {
   flex: 1;
-  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.editor-wrapper {
-  position: relative;
-  height: 100%;
-}
+@media (min-width: 1024px) {
+  .editors-container {
+    flex-direction: row;
+  }
 
-.editor .CodeMirror {
-  height: 100%;
-}
-
-.source .CodeMirror {
-  background-color: aliceblue;
-}
-
-.editor + .editor {
-  border-left: 1px solid hsl(240, 7.6%, 43.7%);
+  .editor + .editor {
+    border-left: 1px solid hsl(240, 7.6%, 43.7%);
+  }
 }

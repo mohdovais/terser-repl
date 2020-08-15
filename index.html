@@ -8,25 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/source-map@0.7.3/dist/source-map.js"></script>
+    <!--<script src="https://unpkg.com/source-map@0.7.3/dist/source-map.js"></script>-->
     <script src="https://unpkg.com/terser@5.1.0/dist/bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/javascript/javascript.min.js"></script>
 </head>
 
 <body>
-    <header><h1>Terser REPL</h1></header>
+    <header>
+        <h1>Terser REPL</h1>
+    </header>
     <div class="editors-container">
-        <div class="editor source">
-            <div class="editor-wrapper"><textarea id="source"></textarea>
-                <div id="source-bytes" class="size"></div>
+        <section class="editor source">
+            <h2>Source</h2>
+            <div class="editor-wrapper">
+                <textarea id="source"></textarea>
+                <div id="source-size" class="size"></div>
             </div>
-        </div>
-        <div class="editor minified">
-            <div class="editor-wrapper"><textarea id="target"></textarea>
-                <div id="target-bytes" class="size"></div>
+        </section>
+        <section class="editor minified">
+            <h2>Minified</h2>
+            <div class="editor-wrapper">
+                <textarea id="minified"></textarea>
+                <div id="minified-size" class="size"></div>
             </div>
-        </div>
+        </section>
     </div>
     <script src="src/main.js" type="module"></script>
 </body>
