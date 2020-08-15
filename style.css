@@ -65,6 +65,10 @@ h2 {
   background-color: aliceblue;
 }
 
+.editor.minified .CodeMirror {
+  padding: 0.5rem 1rem;
+}
+
 .editors-container {
   display: flex;
   flex-direction: column;
