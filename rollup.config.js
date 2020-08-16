@@ -2,9 +2,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
-
-import { readFileSync } from "fs";
-import acorn from "acorn";
+import umd from "./rollup-plugin-import-umd";
 
 export default {
   input: "src/main.js",
@@ -18,22 +16,7 @@ export default {
     postcss({ extract: true, minimize: true, sourceMap: true }),
     resolve(),
     commonjs(),
-    umdExpression(),
+    umd("codemirror/mode/javascript/javascript.js"),
     terser(),
   ],
 };
-
-function umdExpression() {
-  return {
-    name: "umd-expression",
-    load(id) {
-      if (/codemirror\/mode\/javascript\/javascript.js$/.test(id)) {
-        const content = readFileSync(id, "utf8");
-        const ast = acorn.parse(content, { ecmaVersion: 2020 });
-        const { start, end } = ast.body[0].expression.arguments[0];
-        return `export default ${content.substring(start, end)}`;
-      }
-      return null;
-    },
-  };
-}

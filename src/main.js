@@ -7,8 +7,6 @@ modeJavaScript(CodeMirror);
 
 const doc = document;
 const getElementById = doc.getElementById.bind(doc);
-const sourceEl = getElementById("source");
-const targetEl = getElementById("minified");
 const sourceBytesEl = getElementById("source-size");
 const targetBytesEl = getElementById("minified-size");
 
@@ -20,8 +18,8 @@ const getFromTextArea = (textArea, isMinified) =>
     lineWrapping: isMinified,
   });
 
-const sourceCodeMirror = getFromTextArea(sourceEl);
-const targetCodeMirror = getFromTextArea(targetEl, true);
+const sourceCodeMirror = getFromTextArea(getElementById("source"));
+const targetCodeMirror = getFromTextArea(getElementById("minified"), true);
 
 /**
  * @param {string} str
