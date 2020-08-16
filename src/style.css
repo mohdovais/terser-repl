@@ -86,6 +86,10 @@ header {
   flex-direction: column;
 }
 
+.editor .cm-s-default .cm-def {
+  color: hsl(240deg 50% 50%);
+}
+
 @media (min-width: 1024px) {
   .editors-container {
     flex-direction: row;
