@@ -1,0 +1,34 @@
+{
+  "name": "terser-web",
+  "version": "1.0.0",
+  "description": "Terser online REPL",
+  "main": "options.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohdovais/terser-repl.git"
+  },
+  "author": "Mohd Ovais",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohdovais/terser-repl/issues"
+  },
+  "homepage": "https://github.com/mohdovais/terser-repl#readme",
+  "dependencies": {
+    "codemirror": "^5.56.0",
+    "source-map": "^0.7.3",
+    "terser": "^5.1.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "acorn": "^8.0.1",
+    "rollup": "^2.26.2",
+    "rollup-plugin-postcss": "^3.1.5",
+    "rollup-plugin-terser": "^7.0.0"
+  }
+}

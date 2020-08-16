@@ -4,37 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teser REPL</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.css"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <!--<script src="https://unpkg.com/source-map@0.7.3/dist/source-map.js"></script>-->
-    <script src="https://unpkg.com/terser@5.1.0/dist/bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/javascript/javascript.min.js"></script>
+    <title>Teser 5.1.0 REPL</title>
+    <link rel="stylesheet" href="dist/main.css">
+    <lin rel="shortcut icon" href="favicon.ico"></lin>
 </head>
 
 <body>
     <header>
-        <h1>Terser REPL</h1>
+        <h1>Terser 5.1.0 REPL</h1>
+        <small><code>{toplevel: true}</code></small>
     </header>
     <div class="editors-container">
         <section class="editor source">
             <h2>Source</h2>
             <div class="editor-wrapper">
-                <textarea id="source"></textarea>
+                <textarea id="source" style="display: none;"></textarea>
                 <div id="source-size" class="size"></div>
             </div>
         </section>
         <section class="editor minified">
             <h2>Minified</h2>
             <div class="editor-wrapper">
-                <textarea id="minified"></textarea>
+                <textarea id="minified" style="display: none;"></textarea>
                 <div id="minified-size" class="size"></div>
             </div>
         </section>
     </div>
-    <script src="src/main.js" type="module"></script>
+    <script src="dist/main.js" type="module"></script>
 </body>
 
 </html>
