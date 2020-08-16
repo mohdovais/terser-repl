@@ -4,6 +4,7 @@
   "description": "Terser online REPL",
   "main": "options.js",
   "scripts": {
+    "prebuild": "rm -rf dist",
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
